@@ -8,3 +8,6 @@ centos73: https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-
 centos74: https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-1708.qcow2.xz
 centos75: https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-1804_02.qcow2.xz
 centos76: https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-1811.qcow2.xz
+centos77: https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-1907.qcow2.xz
+centos78: https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-2003.qcow2.xz
+
