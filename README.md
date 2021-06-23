@@ -61,7 +61,7 @@ Example Playbook
 - hosts: servers
   become: true         ## If it's a user
   roles:
-    - { role: libvirt-cloud-vm }
+    - { role: ansible.libvirt-cloud-vm }
 ```
 * Example inventory
 ```
@@ -70,18 +70,18 @@ Example Playbook
 ## example inventory
 
 ## example deploy 'rhel'
-#kr-vm-rhel77-0  ansible_host="hypervisor-ip" provide_os="rhel"
-#kr-vm-rhel77-1  ansible_host="hypervisor-ip" provide_os="rhel"
-#kr-vm-rhel77-2  ansible_host="hypervisor-ip" provide_os="rhel" vm_disk_size="22"
+#vm-rhel77-0  ansible_host="hypervisor-ip" provide_os="rhel"
+#vm-rhel77-1  ansible_host="hypervisor-ip" provide_os="rhel"
+#vm-rhel77-2  ansible_host="hypervisor-ip" provide_os="rhel" vm_disk_size="22"
 
-## example deploy 'centos
-kr-vm-centos-610 ansible_host="hypervisor-ip" provide_os="centos" vm_cpu="1" vm_mem="1024" select_version="centos610"
-kr-vm-centos-72  ansible_host="hypervisor-ip" provide_os="centos" vm_cpu="2" vm_mem="1024" select_version="centos72"
-kr-vm-centos-71  ansible_host="hypervisor-ip" provide_os="centos" vm_cpu="3" vm_mem="1024" select_version="centos71"
-kr-vm-centos-73  ansible_host="hypervisor-ip" provide_os="centos" vm_cpu="1" vm_mem="1024" select_version="centos73"
-kr-vm-centos-74  ansible_host="hypervisor-ip" provide_os="centos" vm_cpu="2" vm_mem="2048" select_version="centos74"
-kr-vm-centos-75  ansible_host="hypervisor-ip" provide_os="centos" vm_cpu="3" vm_mem="2048" select_version="centos75"
-kr-vm-centos-76  ansible_host="hypervisor-ip" provide_os="centos" vm_cpu="4" vm_mem="2048" select_version="centos76" vm_disk_size="15"
+## example deploy 'centos'
+vm-centos-610 ansible_host="hypervisor-ip" provide_os="centos" vm_cpu="1" vm_mem="1024" select_version="centos610"
+vm-centos-72  ansible_host="hypervisor-ip" provide_os="centos" vm_cpu="2" vm_mem="1024" select_version="centos72"
+vm-centos-71  ansible_host="hypervisor-ip" provide_os="centos" vm_cpu="3" vm_mem="1024" select_version="centos71"
+vm-centos-73  ansible_host="hypervisor-ip" provide_os="centos" vm_cpu="1" vm_mem="1024" select_version="centos73"
+vm-centos-74  ansible_host="hypervisor-ip" provide_os="centos" vm_cpu="2" vm_mem="2048" select_version="centos74"
+vm-centos-75  ansible_host="hypervisor-ip" provide_os="centos" vm_cpu="3" vm_mem="2048" select_version="centos75"
+vm-centos-76  ansible_host="hypervisor-ip" provide_os="centos" vm_cpu="4" vm_mem="2048" select_version="centos76" vm_disk_size="15"
 ```
 
 * Installation 'KVM'   
