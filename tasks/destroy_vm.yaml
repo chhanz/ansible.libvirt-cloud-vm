@@ -1,0 +1,14 @@
+---
+- name: destroy 'vm'
+  virt:
+    command: destroy
+    name: "{{ inventory_hostname }}"
+
+- name: undefine 'vm'
+  virt:
+    command: undefine
+    name: "{{ inventory_hostname }}"
+
+- name: plaese remove 'vm.data'
+  debug:
+    msg: plaese remove 'vm.data' {{ cloud_img_store }}/{{ inventory_hostname }} (manual only)

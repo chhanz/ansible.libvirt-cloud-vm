@@ -1,0 +1,31 @@
+---
+- name: checking if a processor supports the required flags
+  shell: "grep -E 'svm|vmx' /proc/cpuinfo | grep nx"
+  register: check_cpu_flag
+  failed_when: "check_cpu_flag.rc != 0"
+
+- name: installation KVM 'package'
+  yum: 
+    name: 
+      - genisoimage
+      - wget
+      - qemu-kvm
+      - libvirt
+      - libvirt-python
+      - libvirt-client
+      - libguestfs-tools
+      - virt-install
+      - virt-manager
+      - qemu-img
+    state: present
+
+- name: start service 'KVM'
+  systemd:
+    name: libvirtd
+    state: started
+    enabled: yes
+
+- name: check 'KVM' module
+  shell: "lsmod | grep -i kvm"
+  register: check_kvm_module
+  failed_when: "check_kvm_module.rc != 0"

@@ -1,0 +1,30 @@
+---
+## installation 'KVM'
+install_libvirt: true
+## please choice 'centos' & 'rhel'
+provide_os: centos
+## default cloud image location
+cloud_img_store: /var/lib/libvirt/images
+
+## please import 'rhel-kvm-image'
+rhel_cloud_img: /var/lib/libvirt/images/rhel-server-7.7-x86_64-kvm.qcow2
+
+## support os version.
+# centos610 : CentOS release 6.10 (Final)
+# centos71 : Derived from Red Hat Enterprise Linux 7.1 (Source)
+# centos72 : CentOS Linux release 7.2.1511 (Core)
+# centos73 : CentOS Linux release 7.3.1611 (Core)
+# centos74 : CentOS Linux release 7.4.1708 (Core)
+# centos75 : CentOS Linux release 7.5.1804 (Core)
+# centos76 : CentOS Linux release 7.6.1810 (Core)
+select_version: centos76
+
+## default configure 'KVM' network
+kvm_network: default
+
+## default configure 'VM' resource
+vm_cpu: 2
+# please input 'MiB'
+vm_mem: 1024
+# please input 'GB'
+vm_disk_size: 10

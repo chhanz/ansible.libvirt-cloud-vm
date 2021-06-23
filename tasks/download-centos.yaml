@@ -1,0 +1,10 @@
+---
+- name: download 'centos cloud image'
+  get_url:
+    url: "{{ lookup('vars', select_version) }}"
+    dest: "{{ cloud_img_store }}/{{select_version}}.qcow2.xz"
+    mode: '0644'
+
+- name: unarchive file
+  shell: "xz -d {{ cloud_img_store }}/{{select_version}}.qcow2.xz"
+  ignore_errors: yes

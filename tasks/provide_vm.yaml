@@ -1,0 +1,24 @@
+---
+- name: define 'vm'
+  shell: "virsh define {{ cloud_img_store }}/{{ inventory_hostname }}/{{ inventory_hostname }}.xml"
+
+- name: start 'vm'
+  virt:
+    command: start
+    name: "{{ inventory_hostname }}"
+
+- name: wait active 'vm'
+  virt: 
+    name: "{{ inventory_hostname }}"
+    state: running
+
+- name: gathering 'vm' ip address
+  shell: "virsh domifaddr {{ inventory_hostname }} | grep ipv4 | awk '{print $4}'| awk -F / '{print $1}'"
+  register: show_vm_ip
+  until: show_vm_ip.stdout.find(".") != -1
+  retries: 10
+  delay: 10
+
+- name: report 'vm' ip address
+  debug:
+    msg: "vm is now ready. try 'ssh root@{{ show_vm_ip.stdout }}' to connect server."

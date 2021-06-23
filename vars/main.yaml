@@ -1,0 +1,10 @@
+## centos 6
+centos610: https://cloud.centos.org/centos/6/images/CentOS-6-x86_64-GenericCloud-1907.qcow2.xz
+
+## centos 7
+centos71: https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-1503.qcow2.xz
+centos72: https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-1511.qcow2.xz
+centos73: https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-1611.qcow2.xz
+centos74: https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-1708.qcow2.xz
+centos75: https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-1804_02.qcow2.xz
+centos76: https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-1811.qcow2.xz

@@ -1,0 +1,8 @@
+---
+- name: CentOS | create 'vm disk'
+  shell: qemu-img create -b {{ cloud_img_store }}/{{ select_version }}.qcow2 -f qcow2 {{ cloud_img_store }}/{{ inventory_hostname }}/{{ inventory_hostname }}-rvg.qcow2 {{ vm_disk_size }}G
+
+- name: CentOS | create 'vm xml'
+  template:
+    src: vm.xml.j2
+    dest: "{{ cloud_img_store }}/{{ inventory_hostname }}/{{ inventory_hostname }}.xml"

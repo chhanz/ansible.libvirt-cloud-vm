@@ -1,0 +1,8 @@
+---
+- name: RHEL | create 'vm disk'
+  shell: qemu-img create -b {{ rhel_cloud_img  }} -f qcow2 {{ cloud_img_store }}/{{ inventory_hostname }}/{{ inventory_hostname }}-rvg.qcow2 {{ vm_disk_size }}G
+
+- name: RHEL | create 'vm xml'
+  template:
+    src: rhel_vm.xml.j2
+    dest: "{{ cloud_img_store }}/{{ inventory_hostname }}/{{ inventory_hostname }}.xml"

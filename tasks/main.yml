@@ -1,0 +1,34 @@
+---
+- name: installation 'KVM'
+  include: install_libvirt.yaml
+  when: install_libvirt | bool
+  tags: [ install-libvirt ]
+
+- name: download 'cloud-image'
+  include: download-centos.yaml
+  when: provide_os == "centos"
+  tags: [ centos, download ]
+
+- name: create 'cloud-init'
+  include: genisoimage.yaml
+  tags: [ centos, rhel, create-vm ]
+
+- name: create 'vm.configfile'
+  include: create_vm.yaml
+  when: provide_os == "centos"
+  tags: [ centos, create-vm ]
+
+- name: create 'rhel-vm.configfile'
+  include: create_rhel_vm.yaml
+  when: provide_os == "rhel"
+  tags: [ rhel, create-vm ]
+
+- name: provide 'vm'
+  include: provide_vm.yaml
+  tags: [ centos, rhel, create-vm ]
+
+## management 'vm'
+- name: destroy 'vm'
+  include: destroy_vm.yaml
+  when: ask_remove | default('no') | bool
+  tags: [ destroy-vm ]
